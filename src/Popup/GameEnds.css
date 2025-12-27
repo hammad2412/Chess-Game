@@ -53,11 +53,11 @@
 }
 
 .wins.White {
-  background-image: url("../../../chess/src/assets/wk.png");
+  background-image: url("../assets/wk.png");
 }
 
 .wins.Black {
-  background-image: url("../../../chess/src/assets/bk.png");
+  background-image: url("../assets/bk.png");
 }
 
 .draws {
@@ -65,6 +65,5 @@
   background-size: contain;
   background-repeat: no-repeat, no-repeat;
   background-position: 35% center, 65% center;
-  background-image: url("../../../chess/src/assets/wk.png"),
-    url("../../../chess/src/assets/bk.png");
+  background-image: url("../assets/wk.png"), url("../assets/bk.png");
 }
