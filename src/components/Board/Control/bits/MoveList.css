@@ -1,0 +1,25 @@
+.move-list {
+  display: flex;
+  flex-direction: row;
+  color: var(--dark-tile);
+  flex: 1 1;
+  flex-wrap: wrap;
+  align-content: start;
+  overflow: auto;
+  font-size: 1.1em;
+}
+
+.move-list div {
+  flex-basis: 35%;
+  padding-left: 15%;
+  text-align: left;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.move-list div[data-number]:nth-child(odd)::before {
+  content: attr(data-number);
+  position: absolute;
+  left: 10px;
+  opacity: 0.5;
+}

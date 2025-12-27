@@ -1,0 +1,10 @@
+button {
+  background: green;
+  color: var(--light-tile);
+  border: 0 none;
+  padding: 5px 15px;
+  margin: 10px 0;
+  font-size: 1.1em;
+  cursor: pointer;
+  border-radius: 30%;
+}

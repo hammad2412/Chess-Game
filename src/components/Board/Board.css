@@ -1,0 +1,75 @@
+:root {
+  --tile-size: 60px;
+  --light-tile: #f0d9b5;
+  --dark-tile: #b58863;
+  --highlight: #f0a160;
+  --check: rgb(238, 255, 0);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: calc(0.25 * var(--tile-size)) calc(
+      8 * var(--tile-size)
+    );
+  position: relative;
+  width: calc(8 * var(--tile-size));
+  height: calc(8 * var(--tile-size));
+}
+
+.tiles {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(8, var(--tile-size));
+  grid-template-rows: repeat(8, var(--tile-size));
+  width: calc(8 * var(--tile-size));
+  height: calc(8 * var(--tile-size));
+}
+
+.tile {
+  position: relative;
+}
+
+.tile--light {
+  background: var(--light-tile);
+}
+.tile--dark {
+  background: var(--dark-tile);
+}
+
+.highlight:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: calc(0.5 * var(--tile-size));
+  height: calc(0.5 * var(--tile-size));
+  background: var(--highlight);
+  border-radius: 50%;
+  left: 25%;
+  top: 25%;
+  opacity: 50%;
+}
+
+.attacking::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: calc(var(--tile-size) - 20px);
+  height: calc(var(--tile-size) - 20px);
+  border-radius: 50%;
+  left: 10%;
+  top: 6%;
+  border: 6px solid var(--highlight);
+  opacity: 60%;
+}
+
+.checked:after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: var(--tile-size);
+  height: var(--tile-size);
+  background: var(--check);
+  border-radius: 20%;
+  left: 0;
+  top: 0;
+}
