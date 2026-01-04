@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+♟️ Chess Game – React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fully functional chess game built using React.js, implementing complete chess rules with an interactive and responsive user interface. This project focuses on clean state management, accurate game logic, and smooth user interactions.
 
-## Available Scripts
+🚀 Core Features
 
-In the project directory, you can run:
+1. Full chess gameplay with legal move validation
+2. Check, checkmate, and stalemate detection
+3. Castling and pawn promotion
+4. Turn-based play with move restrictions
+5. Highlighted possible moves
+6. Undo move functionality
+7. Move history tracking
+8. Responsive and intuitive UI
 
-### `npm start`
+🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. React.js
+2. JavaScript (ES6+)
+3. CSS3
+4. React Hooks (useState, useReducer, useContext)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🧠 Key Concepts Implemented
 
-### `npm test`
+1. Centralized game state using reducers
+2. Separation of UI and game logic
+3. Immutable state updates for move history
+4. Custom helper functions for chess rules
+5. Component-driven architecture for scalability
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+📁 Project Structure
+src/
+├── components/ # UI components (Board, Square, Promotion, etc.)
+├── context/ # Global game state and reducer
+├── helpers/ # Chess logic and move generation
+├── constants/ # Game statuses and enums
+├── App.js
+└── index.js
 
-### `npm run build`
+▶️ Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository
+   git clone https://github.com/hammad2412/Chess-Game.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies
+   npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Run the application
+   npm start
 
-### `npm run eject`
+The app will run on http://localhost:3000
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🎯 Learning Outcomes
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Deep understanding of complex state management
+2. Implementing real-world game logic in frontend
+3. Handling edge cases and rule-based UI updates
+4. Writing scalable and maintainable React code
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+📸 Screenshots
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Chess Board Gameplay](screenshots/chessboard-and-gameplay.png)
 
-## Learn More
+![Legal Move Highlight](screenshots/legal-move-highlight.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Pawn Promotion](screenshots/pawn-promotion.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Check Detection](screenshots/check-detection.png)
 
-### Code Splitting
+![Checkmate Detection](screenshots/checkmate-detection.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Move History and Undo](screenshots/move-history-and-undo.png)
 
-### Analyzing the Bundle Size
+👨‍💻 Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Mohd Hammad Khan
+Frontend Developer | React.js | JavaScript
+GitHub: https://github.com/hammad2412
+LinkedIn: https://linkedin.com/in/hammadkhan1224
