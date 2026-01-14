@@ -3,7 +3,7 @@
   --light-tile: #f0d9b5;
   --dark-tile: #b58863;
   --highlight: #f0a160;
-  --check: rgb(238, 255, 0);
+  --check: rgb(255, 0, 0);
 }
 
 .board {
@@ -72,4 +72,23 @@
   border-radius: 20%;
   left: 0;
   top: 0;
+  animation: shake 1s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

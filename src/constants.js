@@ -16,6 +16,7 @@ export const initGameState = {
   candidateMoves: [],
   status: Status.ongoing,
   promotionSquare: null,
+  selectedPiece: null,
   castleDirection: {
     w: "both",
     b: "both",

@@ -84,6 +84,13 @@ export const reducer = (state, action) => {
       };
     }
 
+    case actionTypes.SELECT_PIECE: {
+      return {
+        ...state,
+        selectedPiece: action.payload,
+      };
+    }
+
     case actionTypes.TAKE_BACK: {
       let { position, moveList, turn } = state;
 

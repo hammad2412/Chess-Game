@@ -16,9 +16,7 @@ import { getNewMoveNotation } from "../../../helper";
 
 const Pieces = () => {
   const ref = useRef();
-
   const { appState, dispatch } = useAppContext();
-
   const currentPosition = appState.position[appState.position.length - 1];
 
   const calculateCoords = (e) => {
@@ -78,9 +76,10 @@ const Pieces = () => {
         y,
         position: currentPosition,
       });
-      console.log(newMove);
+      // console.log(newMove);
 
       dispatch(makeNewMove({ newPosition, newMove }));
+      dispatch({ type: "SELECT_PIECE", payload: null });
 
       if (arbiter.insufficientMaterial(newPosition))
         dispatch(detectInsufficientMaterial());
@@ -99,8 +98,50 @@ const Pieces = () => {
 
   const onDragOver = (e) => e.preventDefault();
 
+  // click on a square to move piece
+  const handleBoardClick = (e) => {
+    if (!appState.selectedPiece) return;
+
+    const { x, y } = calculateCoords(e);
+
+    const isValidMove = appState.candidateMoves?.some(
+      (m) => m[0] === x && m[1] === y
+    );
+
+    // if clicked non-highlight square -> deselect
+    if (!isValidMove) {
+      dispatch(clearCandidates());
+      dispatch({ type: "SELECT_PIECE", payload: null });
+      return;
+    }
+
+    // else move
+    const { piece, rank, file } = appState.selectedPiece;
+
+    const fakeEvent = {
+      clientX: e.clientX,
+      clientY: e.clientY,
+      dataTransfer: {
+        getData: () => `${piece},${rank},${file}`,
+      },
+    };
+
+    move(fakeEvent);
+  };
+
   return (
-    <div ref={ref} onDrop={onDrop} onDragOver={onDragOver} className="pieces">
+    <div
+      ref={ref}
+      onDrop={onDrop}
+      onDragOver={onDragOver}
+      onClick={handleBoardClick}
+      className="pieces"
+      //Mobile Support
+      onTouchStart={(e) => {
+        e.preventDefault();
+        handleBoardClick(e?.touches[0]);
+      }}
+    >
       {currentPosition.map((r, rank) =>
         r.map((f, file) =>
           currentPosition[rank][file] ? (

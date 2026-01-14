@@ -14,13 +14,3 @@ body {
   font-family: "Sofia Sans", sans-serif;
   grid-template-columns: auto 220px;
 }
-/* button {
-  background: green;
-  color: var(--light-tile);
-  border: 0 none;
-  padding: 10px 30px;
-  margin: 10px 0;
-  font-size: 1.1em;
-  cursor: pointer;
-  border-radius: 20%;
-} */

@@ -10,6 +10,7 @@ const actionTypes = {
   INSUFFICIENT_MATERIAL: "INSUFFICIENT_MATERIAL",
   WIN: "WIN",
   TAKE_BACK: "TAKE_BACK",
+  SELECT_PIECE: "SELECT_PIECE",
 };
 
 export default actionTypes;

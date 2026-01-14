@@ -20,6 +20,24 @@
   width: var(--tile-size);
   height: var(--tile-size);
   background-size: cover;
+  transition: transform 2s ease-in-out;
+  will-change: transform;
+}
+
+.piece.selected {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0px #00ff88;
+  }
+  50% {
+    box-shadow: 0 0 12px #00ff88;
+  }
+  100% {
+    box-shadow: 0 0 0px #00ff88;
+  }
 }
 
 /* black */

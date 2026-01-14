@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Board from "./components/Board/Board";
 import AppContext from "./Context/Context";
@@ -16,15 +17,24 @@ function App() {
     dispatch,
   };
   return (
-    <AppContext.Provider value={provideState}>
-      <div className="App">
-        <Board />
-        <Control>
-          <MoveList />
-          <TakeBack />
-        </Control>
-      </div>
-    </AppContext.Provider>
+    <BrowserRouter basename="/Chess-Game">
+      <AppContext.Provider value={provideState}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="App">
+                <Board />
+                <Control>
+                  <MoveList />
+                  <TakeBack />
+                </Control>
+              </div>
+            }
+          />
+        </Routes>
+      </AppContext.Provider>
+    </BrowserRouter>
   );
 }
 
