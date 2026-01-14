@@ -29,13 +29,14 @@ A fully functional chess game built using React.js, implementing complete chess 
 5. Component-driven architecture for scalability
 
 📁 Project Structure
+
 src/
-├── components/ # UI components (Board, Square, Promotion, etc.)
-├── context/ # Global game state and reducer
-├── helpers/ # Chess logic and move generation
-├── constants/ # Game statuses and enums
-├── App.js
-└── index.js
+1. ├── components/ # UI components (Board, Square, Promotion, etc.)
+2. ├── context/ # Global game state and reducer
+3. ├── helpers/ # Chess logic and move generation
+4. ├── constants/ # Game statuses and enums
+5. ├── App.js
+6. └── index.js
 
 ▶️ Getting Started
 
@@ -43,9 +44,11 @@ src/
    git clone https://github.com/hammad2412/Chess-Game.git
 
 2. Install dependencies
+   
    npm install
 
 3. Run the application
+   
    npm start
 
 The app will run on http://localhost:3000
@@ -74,6 +77,9 @@ The app will run on http://localhost:3000
 👨‍💻 Author
 
 Mohd Hammad Khan
+
 Frontend Developer | React.js | JavaScript
+
 GitHub: https://github.com/hammad2412
+
 LinkedIn: https://linkedin.com/in/hammadkhan1224
