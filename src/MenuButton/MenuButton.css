@@ -1,0 +1,123 @@
+.menu-wrapper {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  z-index: 100;
+}
+
+/* triple dot */
+.dot-btn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+/* dropdown */
+.menu-box {
+  position: absolute;
+  right: 12px;
+  top: 40px;
+  background: #b9b9b9;
+  border-radius: 15px;
+  padding: 10px;
+  min-width: 170px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.menu-title {
+  font-weight: bold;
+  opacity: 0.7;
+  margin-bottom: 8px;
+  color: #1b1b1b;
+}
+
+/* theme buttons */
+.themes-btn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.themes-btn button {
+  padding: 5px 12px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  color: rgb(46, 46, 46);
+  transition: 0.2s ease;
+}
+
+.btn-default {
+  background: linear-gradient(135deg, #f0d9b5, #b58863);
+}
+.btn-blue {
+  background: linear-gradient(135deg, #aac6ee, #5574e4);
+}
+.btn-green {
+  background: linear-gradient(135deg, #aaffc9, #11a547);
+}
+.btn-pink {
+  background: linear-gradient(135deg, #ebd4e1, #ce528e);
+}
+.btn-grey {
+  background: linear-gradient(135deg, #d4d4d4, #7a7a7a);
+}
+.btn-golden {
+  background: linear-gradient(135deg, #cbcf90, #a89a1a);
+}
+
+.themes-btn button:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+
+/* new game */
+.new-game {
+  padding: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  background-color: green;
+  color: white;
+  border-radius: 50px;
+}
+
+.new-game:hover {
+  background: rgba(17, 17, 17, 0.15);
+  color: black;
+}
+
+.new-game.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.new-game.disabled:hover {
+  transform: none;
+  background-color: green;
+  color: white;
+}
+
+/* tooltip */
+.tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.new-game.disabled:hover .tooltip {
+  opacity: 1;
+}

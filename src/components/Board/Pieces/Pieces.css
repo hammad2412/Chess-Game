@@ -5,23 +5,14 @@
   bottom: calc(0.25 * var(--tile-size));
   width: calc(8 * var(--tile-size));
   height: calc(8 * var(--tile-size));
-  /*grid-column: 2; /* align with tiles */
-  /* position: relative; /* align to grid */
   position: absolute;
 }
 
-/*.pieces {
-  width: calc(8 * var(--tile-size));
-  height: calc(8 * var(--tile-size));
-  }
-  */
 .piece {
   position: absolute;
   width: var(--tile-size);
   height: var(--tile-size);
   background-size: cover;
-  transition: transform 2s ease-in-out;
-  will-change: transform;
 }
 
 .piece.selected {
@@ -30,14 +21,21 @@
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0px #00ff88;
+    box-shadow: 0 0 0px #000000;
   }
   50% {
-    box-shadow: 0 0 12px #00ff88;
+    box-shadow: 0 0 12px #000000;
   }
   100% {
-    box-shadow: 0 0 0px #00ff88;
+    box-shadow: 0 0 0px #000000;
   }
+}
+
+.selected {
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.45));
+  transform: scale(1.08);
+  transition: 0.15s ease;
+  cursor: grab;
 }
 
 /* black */

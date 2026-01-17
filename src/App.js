@@ -1,39 +1,32 @@
-import { useReducer } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Board from "./components/Board/Board";
-import AppContext from "./Context/Context";
-import { reducer } from "./reducer/reducer";
-import { initGameState } from "./constants";
 import Control from "./components/Board/Control/Control";
 import MoveList from "./components/Board/Control/bits/MoveList";
 import TakeBack from "./components/Board/Control/bits/TakeBack";
+import Menu from "./MenuButton/MenuButton";
+import { useAppContext } from "./Context/Context";
 
 function App() {
-  const [appState, dispatch] = useReducer(reducer, initGameState);
-
-  const provideState = {
-    appState,
-    dispatch,
-  };
+  const { theme } = useAppContext();
   return (
     <BrowserRouter basename="/Chess-Game">
-      <AppContext.Provider value={provideState}>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <div className="App">
-                <Board />
-                <Control>
-                  <MoveList />
-                  <TakeBack />
-                </Control>
-              </div>
-            }
-          />
-        </Routes>
-      </AppContext.Provider>
+      {/* */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className={`App ${theme}`}>
+              <Menu />
+              <Board />
+              <Control>
+                <TakeBack />
+                <MoveList />
+              </Control>
+            </div>
+          }
+        />
+      </Routes>
     </BrowserRouter>
   );
 }

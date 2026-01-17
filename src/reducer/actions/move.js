@@ -25,3 +25,9 @@ export const takeBack = () => {
     type: actionTypes.TAKE_BACK,
   };
 };
+
+export const clearCapture = () => {
+  return {
+    type: actionTypes.CLEAR_CAPTURE,
+  };
+};

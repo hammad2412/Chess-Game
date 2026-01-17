@@ -5,15 +5,23 @@ export const reducer = (state, action) => {
   switch (action.type) {
     case actionTypes.NEW_MOVE: {
       let { turn, position, moveList } = state;
-      turn = turn === "w" ? "b" : "w";
-      position = [...position, action.payload.newPosition];
 
-      moveList = [...moveList, action.payload.newMove];
+      const { newPosition, newMove } = action.payload;
+
+      turn = turn === "w" ? "b" : "w";
+      position = [...position, newPosition];
+
+      moveList = [...moveList, newMove];
       return {
         ...state,
         turn,
         moveList,
         position,
+        lastMove: {
+          from: newMove.from,
+          to: newMove.to,
+        },
+        capturedSquare: newMove.captured ? newMove.to : null,
       };
     }
 
@@ -91,19 +99,32 @@ export const reducer = (state, action) => {
       };
     }
 
+    case actionTypes.CLEAR_CAPTURE: {
+      return {
+        ...state,
+        capturedSquare: null,
+      };
+    }
+
     case actionTypes.TAKE_BACK: {
       let { position, moveList, turn } = state;
 
       if (position.length > 1) {
-        position = position.slice(0, position.length - 1);
-        moveList = moveList.slice(0, moveList.length - 1);
+        position = position.slice(0, -1);
+        moveList = moveList.slice(0, -1);
         turn = turn === "w" ? "b" : "w";
       }
+
+      const last = moveList[moveList.length - 1];
+
       return {
         ...state,
         position,
         moveList,
         turn,
+        lastMove: last
+          ? { from: last.from, to: last.to }
+          : { from: null, to: null },
       };
     }
 

@@ -68,8 +68,20 @@ export const getNewMoveNotation = ({
   file = Number(file);
 
   if (piece[1] === "k" && Math.abs(file - y) === 2) {
-    if (file > y) return "O-O-O";
-    else return "O-O";
+    if (file > y)
+      return {
+        note: "O-O-O",
+        from: { row: rank, col: file },
+        to: { row: x, col: y },
+        captured: position[x][y] || null,
+      };
+    else
+      return {
+        note: "O-O",
+        from: { row: rank, col: file },
+        to: { row: x, col: y },
+        captured: position[x][y] || null,
+      };
   }
 
   if (piece[1] !== "p") {
@@ -83,5 +95,10 @@ export const getNewMoveNotation = ({
 
   if (promotedTo) note += "=" + promotedTo.toUpperCase();
 
-  return note;
+  return {
+    note,
+    from: { row: rank, col: file },
+    to: { row: x, col: y },
+    captured: position[x][y] || null,
+  };
 };

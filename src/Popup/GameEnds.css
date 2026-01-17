@@ -1,11 +1,3 @@
-/* .popup {
-  right: 0;
-  top: 0;
-  position: absolute;
-  left: calc(0.25 * var(--tile-size));
-  bottom: calc(0.25 * var(--tile-size));
-} */
-
 .popup--inner {
   width: 48%;
   height: 38%;
@@ -42,7 +34,7 @@
   margin: 10px 0;
   font-size: 1.1em;
   cursor: pointer;
-  border-radius: 20%;
+  border-radius: 50px;
 }
 
 .wins {

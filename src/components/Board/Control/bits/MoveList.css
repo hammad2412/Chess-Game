@@ -1,7 +1,7 @@
 .move-list {
   display: flex;
   flex-direction: row;
-  color: var(--dark-tile);
+  color: var(--light-tile);
   flex: 1 1;
   flex-wrap: wrap;
   align-content: start;

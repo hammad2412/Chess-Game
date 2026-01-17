@@ -1,11 +1,80 @@
 :root {
-  --tile-size: #f0d8b7;
-  --light-tile: #b48764;
+  --tile-size: 60px;
   --bg-color: #202020;
+  --light-tile: #f0d9b5;
+  --dark-tile: #b58863;
+  --highlight: #ee9e5e;
+  --check: red;
+  --last-move: inset 0 0 0 4px rgb(255, 255, 80);
 }
 
-@media all and (max-width: 450px) {
+.theme-default {
+  --bg-color: #202020;
+}
+.theme-blue {
+  --bg-color: linear-gradient(135deg, #100f1f, #20317e);
+  --light-tile: #aac6ee;
+  --dark-tile: #5574e4;
+  --highlight: #79fbea;
+  --last-move: inset 0 0 0 4px #e6ff00;
+}
+
+.theme-green {
+  --bg-color: linear-gradient(135deg, #1d351a, #0b3d2e);
+  --light-tile: #d3ffe3;
+  --dark-tile: #45e27e;
+  --highlight: #1d8d4f;
+  --last-move: inset 0 0 0 4px #e6ff00;
+}
+
+.theme-pink {
+  --bg-color: linear-gradient(135deg, #241010, #41172a);
+  --light-tile: #ffd7ed;
+  --dark-tile: #ec64a6;
+  --highlight: #ffaad3;
+  --last-move: inset 0 0 0 4px #ffea00;
+}
+
+.theme-grey {
+  --bg-color: linear-gradient(135deg, #111111, #2b3138);
+  --light-tile: #d4d4d4;
+  --dark-tile: #7a7a7a;
+  --highlight: #a6a6a6;
+  --last-move: inset 0 0 0 4px #00ffff;
+}
+
+.theme-golden {
+  --bg-color: linear-gradient(135deg, #2c310c, #524f0f);
+  --light-tile: #fce4cc;
+  --dark-tile: #996515;
+  --highlight: #d2a24f;
+  --last-move: inset 0 0 0 4px #00ffea;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  .App {
+    justify-content: center;
+    align-items: start;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
   :root {
-    --tile-size: 50px;
+    --tile-size: 55px; /* 440px */
+  }
+}
+
+@media (max-width: 450px) {
+  :root {
+    --tile-size: 50px; /* 400px */
+  }
+}
+@media (max-width: 380px) {
+  :root {
+    --tile-size: 42px; /* 336px */
   }
 }

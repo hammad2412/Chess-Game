@@ -1,35 +1,65 @@
-♟️ Chess Game – React Application
+<h1 align="center">♟️ Chess Game</h1>
 
-A fully functional chess game built using React.js, implementing complete chess rules with an interactive and responsive user interface. This project focuses on clean state management, accurate game logic, and smooth user interactions.
+<p align="center">
+  A modern, interactive chess game built with React  
+</p>
 
-🚀 Core Features
+---
 
-1. Full chess gameplay with legal move validation
-2. Check, checkmate, and stalemate detection
-3. Castling and pawn promotion
-4. Turn-based play with move restrictions
-5. Highlighted possible moves
-6. Undo move functionality
-7. Move history tracking
-8. Responsive and intuitive UI
+<p align="center"> 🌐 Live Demo : 
+<a href="https://hammad2412.github.io/Chess-Game/" target="_blank">🔗Click here to play the game</a>
+</p>
 
-🛠️ Tech Stack
+---
 
-1. React.js
-2. JavaScript (ES6+)
-3. CSS3
-4. React Hooks (useState, useReducer, useContext)
+<h2>📌 About The Project</h2>
 
-🧠 Key Concepts Implemented
+<p>A fully functional chess game built using React.js, implementing complete chess rules with an interactive and responsive user interface. This project focuses on clean state management, accurate game logic, and smooth user interactions.
+</p>
 
-1. Centralized game state using reducers
-2. Separation of UI and game logic
-3. Immutable state updates for move history
-4. Custom helper functions for chess rules
-5. Component-driven architecture for scalability
+<h2>🚀 Core Features</h2>
+<ul>
+  <li>✔️ Fully functional chess board</li>
+  <li>✔️ Valid move detection</li>
+<li>✔️ Check, Checkmate and Stalemate detection</li>
+  <li>✔️ Turn-based gameplay (White vs Black) with move restriction</li>
+  <li>✔️ Highlighted possible moves with Last move highlight</li>
+  <li>✔️ Capture animations</li>
+  <li>✔️ Piece shadow on selection</li>
+  <li>✔️ Undo move functionality</li>
+  <li>✔️ Move history panel</li>
+  <li>✔️ Multiple color themes</li>
+  <li>✔️ Responsive UI</li>
+</ul>
 
-📁 Project Structure
+---
 
+<h2>🛠️ Tech Stack</h2>
+<ul>
+  <li>⚛️ React.js</li>
+  <li>🎨 CSS3</li>
+  <li>📦 JavaScript (ES6)</li>
+  <li>🧩 React Hooks (useContext, useState, useRef, useReducer)</li>
+</ul>
+
+---
+
+<h2>🧠 Key Concepts Implemented</h2>
+<ul>
+<li> Centralized game state using reducers </li>
+<li> Separation of UI and game logic </li>
+<li> Immutable state updates for move history </li>
+<li> Custom helper functions for chess rules</li>
+<li> Component-driven architecture for scalability</li>
+<ul>
+
+---
+
+<h2>📂 Project Structure</h2>
+
+<pre>
+Chess-Game/
+│
 src/
 1. ├── components/ # UI components (Board, Square, Promotion, etc.)
 2. ├── context/ # Global game state and reducer
@@ -37,49 +67,111 @@ src/
 4. ├── constants/ # Game statuses and enums
 5. ├── App.js
 6. └── index.js
+</pre>
 
-▶️ Getting Started
+---
 
-1. Clone the repository
-   git clone https://github.com/hammad2412/Chess-Game.git
+<h2>⚙️ Run locally</h2>
 
-2. Install dependencies
-   
-   npm install
+<pre>
 
-3. Run the application
-   
-   npm start
+git clone https://github.com/hammad2412/Chess-Game.git
 
-The app will run on http://localhost:3000
+cd Chess-Game
 
-🎯 Learning Outcomes
+npm install
 
-1. Deep understanding of complex state management
-2. Implementing real-world game logic in frontend
-3. Handling edge cases and rule-based UI updates
-4. Writing scalable and maintainable React code
+npm start
+</pre>
 
-📸 Screenshots
+---
 
-![Chess Board Gameplay](screenshots/chessboard-and-gameplay.png)
+<h2>🎮 How to Play</h2>
+<ul>
+   <li>Click on a piece or Drag a pieace to see valid moves</li>
+   <li>Click or Drop on a highlighted square to move</li>
+   <li>Captured pieces disappear with animation</li>
+   <li>Use "Undo" button to undo moves</li>
+   <li>New Game (Open menu at three dots at top-right carner)</li>
+</ul>
 
-![Legal Move Highlight](screenshots/legal-move-highlight.png)
+---
 
-![Pawn Promotion](screenshots/pawn-promotion.png)
+<h2>📸 Screenshots</h2>
 
-![Check Detection](screenshots/check-detection.png)
+<h4>Board and Gameplay</h4>
+<img src="./screenshots/board-gameplay.png" width="80%" alt="BoardAndGameplay"/>
+<h4>Legal move highlight</h4>
+<img src="./screenshots/move-highlight.png" width="80%" alt="move"/>
+<h4>Pawn promotion</h4>
+<img src="./screenshots/pawn-promotion.png" width="80%" alt="promotion"/>
+<h4>Check Detection</h4>
+<img src="./screenshots/check.png" width="80%" alt="check"/>
+<h4>Checkmate popup (Gameover)</h4>
+<img src="./screenshots/checkmate.png" width="80%" alt="checkmate"/>
 
-![Checkmate Detection](screenshots/checkmate-detection.png)
+<details>
+<summary>📷 THEMES</summary>
+<h4>Blue</h4>
+<img src="./screenshots/blue.png" width="80%" alt="theme"/>
+<h4>Green</h4>
+<img src="./screenshots/green.png" width="80%" alt="theme"/>
+<h4>Grey</h4>
+<img src="./screenshots/grey.png" width="80%" alt="theme"/>
+<h4>Golden</h4>
+<img src="./screenshots/golden.png" width="80%" alt="theme"/>
+<h4>Pink</h4>
+<img src="./screenshots/pink.png" width="80%" alt="theme"/>
+##</details>
 
-![Move History and Undo](screenshots/move-history-and-undo.png)
+---
 
-👨‍💻 Author
+<h2>🎯 Learning Outcomes</h2>
 
-Mohd Hammad Khan
+<ul>
+<li>Deep understanding of complex state management</li>
+<li> Implementing real-world game logic in frontend</li>
+<li> Handling edge cases and rule-based UI updates</li>
+<li> Writing scalable and maintainable React code</li>
+</ul>
 
-Frontend Developer | React.js | JavaScript
+---
 
-GitHub: https://github.com/hammad2412
+<h2>✨ Future Improvements</h2>
+<ul>
+  <li>AI opponent</li>
+  <li>Online multiplayer</li>
+  <li>Timer support</li>
+  <li>Sound effects</li>
+</ul>
 
-LinkedIn: https://linkedin.com/in/hammadkhan1224
+---
+
+<h2>👨‍💻 Author</h2>
+
+<p>
+<strong>Mohd Hammad Khan</strong><br/>
+Frontend Developer | React | JS
+</p>
+
+<h3>🔗 Connect with me</h3>
+
+<p>
+<a href="https://www.linkedin.com/in/hammadkhan1224" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="18"/>
+  LinkedIn 
+</a>
+</p>
+
+<p>
+<a href="https://github.com/hammad2412" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" 
+       width="18"/> 
+  GitHub
+</a>
+</p>
+---
+
+<p align="center">
+  ⭐ If you like this project, don’t forget to star the repo!
+</p>

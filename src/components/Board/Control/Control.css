@@ -5,3 +5,14 @@
   text-align: center;
   height: calc(8 * var(--tile-size));
 }
+
+/*responsive*/
+
+@media (max-width: 850px) {
+  .control {
+    margin-top: 12px;
+    max-height: 200px;
+    width: calc(8 * var(--tile-size));
+    overflow-y: auto;
+  }
+}

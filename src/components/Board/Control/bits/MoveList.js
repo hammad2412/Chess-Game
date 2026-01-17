@@ -10,7 +10,7 @@ const MoveList = () => {
     <div className="move-list">
       {moveList.map((move, i) => (
         <div key={i} data-number={Math.floor(i / 2 + 1)}>
-          {move}
+          {move.note}
         </div>
       ))}
     </div>

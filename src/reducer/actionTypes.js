@@ -11,6 +11,7 @@ const actionTypes = {
   WIN: "WIN",
   TAKE_BACK: "TAKE_BACK",
   SELECT_PIECE: "SELECT_PIECE",
+  CLEAR_CAPTURE: "CLEAR_CAPTURE",
 };
 
 export default actionTypes;

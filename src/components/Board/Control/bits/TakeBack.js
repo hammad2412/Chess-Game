@@ -7,7 +7,9 @@ const TakeBack = () => {
 
   return (
     <div className="take-back">
-      <button onClick={() => dispatch(takeBack())}>Undo</button>
+      <button className="undo" onClick={() => dispatch(takeBack())}>
+        Undo
+      </button>
     </div>
   );
 };
