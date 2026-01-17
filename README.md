@@ -4,8 +4,6 @@
   A modern, interactive chess game built with React  
 </p>
 
----
-
 <p align="center"> 🌐 Live Demo : 
 <a href="https://hammad2412.github.io/Chess-Game/" target="_blank">🔗Click here to play the game</a>
 </p>
@@ -122,7 +120,7 @@ npm start
 <img src="./screenshots/golden.png" width="80%" alt="theme"/>
 <h4>Pink</h4>
 <img src="./screenshots/pink.png" width="80%" alt="theme"/>
-##</details>
+</details>
 
 ---
 
@@ -170,7 +168,6 @@ Frontend Developer | React | JS
   GitHub
 </a>
 </p>
----
 
 <p align="center">
   ⭐ If you like this project, don’t forget to star the repo!
