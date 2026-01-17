@@ -82,7 +82,9 @@ const Piece = ({ rank, file, piece }) => {
       onDragEnd={!isMobile ? onDragEnd : undefined}
       onClick={!isMobile ? onClick : undefined}
       //Mobile Support
-      onTouchStart={isMobile ? onclick : undefined}
+      onTouchStart={() => {
+        onclick();
+      }}
     />
   );
 };
