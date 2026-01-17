@@ -16,6 +16,7 @@ const Piece = ({ rank, file, piece }) => {
     appState.selectedPiece &&
     appState.selectedPiece.rank === rank &&
     appState.selectedPiece.file === file;
+  const isMobile = "ontouchstart" in window;
 
   const onDragStart = (e) => {
     e.dataTransfer.effectAllowed = "move";
@@ -76,15 +77,12 @@ const Piece = ({ rank, file, piece }) => {
       className={`piece ${piece} p-${file}${rank} ${
         isSelected ? "selected" : ""
       }`}
-      draggable={true}
-      onDragStart={onDragStart}
-      onDragEnd={onDragEnd}
-      onClick={onClick}
+      draggable={!isMobile}
+      onDragStart={!isMobile ? onDragStart : undefined}
+      onDragEnd={!isMobile ? onDragEnd : undefined}
+      onClick={!isMobile ? onClick : undefined}
       //Mobile Support
-      onTouchStart={(e) => {
-        e.preventDefault();
-        onClick();
-      }}
+      onTouchStart={isMobile ? onclick : undefined}
     />
   );
 };

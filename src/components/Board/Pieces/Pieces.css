@@ -15,6 +15,11 @@
   background-size: cover;
 }
 
+.piece,
+.pieces {
+  touch-action: manipulation;
+}
+
 .piece.selected {
   animation: pulse 1s infinite;
 }

@@ -136,11 +136,11 @@ const Pieces = () => {
       onDragOver={onDragOver}
       onClick={handleBoardClick}
       className="pieces"
-      //Mobile Support
-      onTouchStart={(e) => {
-        e.preventDefault();
-        handleBoardClick(e?.touches[0]);
-      }}
+      // //Mobile Support
+      // onTouchStart={(e) => {
+      //   e.preventDefault();
+      //   handleBoardClick(e?.touches[0]);
+      // }}
     >
       {currentPosition.map((r, rank) =>
         r.map((f, file) =>
