@@ -19,3 +19,36 @@ body {
   gap: 16px;
   padding: 12px;
 }
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  .App {
+    justify-content: center;
+    align-items: start;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    --tile-size: 55px; /* 440px */
+  }
+}
+
+@media (max-width: 450px) {
+  :root {
+    --tile-size: 50px; /* 400px */
+  }
+}
+@media (max-width: 380px) {
+  :root {
+    --tile-size: 42px; /* 336px */
+  }
+}
+@media (max-width: 350px) {
+  :root {
+    --tile-size: 40px; /* 320px */
+  }
+}
