@@ -18,35 +18,10 @@ const Piece = ({ rank, file, piece }) => {
     appState.selectedPiece.file === file;
   const isMobile = "ontouchstart" in window;
 
-  const onDragStart = (e) => {
-    e.dataTransfer.effectAllowed = "move";
-    e.dataTransfer.setData("text/plain", `${piece},${rank},${file}`);
-    setTimeout(() => {
-      e.target.style.display = "none";
-    }, 0);
-    if (turn === piece[0]) {
-      const candidateMoves = arbiter.getValidMoves({
-        position: currentPosition,
-        prevPosition,
-        castleDirection: castleDirection[turn],
-        piece,
-        rank,
-        file,
-      });
-      dispatch({
-        type: "SELECT_PIECE",
-        payload: { piece, rank, file },
-      });
-      dispatch(generateCandidateMoves(candidateMoves));
-    }
-  };
-  const onDragEnd = (e) => (e.target.style.display = "block");
-
-  //Click to generate move
-  const onClick = () => {
+  const selectPiece = () => {
     if (turn !== piece[0]) return;
 
-    // if clicking same piece again -> deselect
+    //deselect if click on same piece
     if (
       appState.selectedPiece &&
       appState.selectedPiece.rank === rank &&
@@ -60,17 +35,35 @@ const Piece = ({ rank, file, piece }) => {
     //normal select
     dispatch(clearCandidates());
 
-    const fakeEvent = {
-      dataTransfer: {
-        setData: () => {},
-        effectAllowed: "move",
-      },
-      target: {
-        style: { display: "block" },
-      },
-    };
-    onDragStart(fakeEvent);
+    const candidateMoves = arbiter.getValidMoves({
+      position: currentPosition,
+      prevPosition,
+      castleDirection: castleDirection[turn],
+      piece,
+      rank,
+      file,
+    });
+
+    dispatch({
+      type: "SELECT_PIECE",
+      payload: { piece, rank, file },
+    });
+
+    dispatch(generateCandidateMoves(candidateMoves));
   };
+
+  const onDragStart = (e) => {
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("text/plain", `${piece},${rank},${file}`);
+
+    setTimeout(() => {
+      e.target.style.display = "none";
+    }, 0);
+
+    selectPiece(); // Call logic
+  };
+
+  const onDragEnd = (e) => (e.target.style.display = "block");
 
   return (
     <div
@@ -80,11 +73,9 @@ const Piece = ({ rank, file, piece }) => {
       draggable={!isMobile}
       onDragStart={!isMobile ? onDragStart : undefined}
       onDragEnd={!isMobile ? onDragEnd : undefined}
-      onClick={!isMobile ? onClick : undefined}
+      onClick={!isMobile ? selectPiece : undefined}
       //Mobile Support
-      onTouchStart={() => {
-        onclick();
-      }}
+      onTouchStart={isMobile ? selectPiece : undefined}
     />
   );
 };

@@ -105,7 +105,7 @@ const Pieces = () => {
     const { x, y } = calculateCoords(e);
 
     const isValidMove = appState.candidateMoves?.some(
-      (m) => m[0] === x && m[1] === y
+      (m) => m[0] === x && m[1] === y,
     );
 
     // if clicked non-highlight square -> deselect
@@ -137,10 +137,9 @@ const Pieces = () => {
       onClick={handleBoardClick}
       className="pieces"
       // //Mobile Support
-      // onTouchStart={(e) => {
-      //   e.preventDefault();
-      //   handleBoardClick(e?.touches[0]);
-      // }}
+      onTouchStart={(e) => {
+        handleBoardClick(e?.touches[0]);
+      }}
     >
       {currentPosition.map((r, rank) =>
         r.map((f, file) =>
@@ -151,8 +150,8 @@ const Pieces = () => {
               rank={rank}
               piece={currentPosition[rank][file]}
             />
-          ) : null
-        )
+          ) : null,
+        ),
       )}
     </div>
   );
